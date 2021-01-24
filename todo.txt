@@ -1,0 +1,2 @@
+[ ] add a sign in to add coffees only if you are an employee
+[ ] add a view coffees if not employee
