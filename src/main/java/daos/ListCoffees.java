@@ -2,10 +2,11 @@ package daos;
 
 import model.Coffee;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListCoffees implements Coffees{
-    private List<Coffee> allCoffees;
+    private List<Coffee> allCoffees = new ArrayList<>();
 
 
     public ListCoffees (){

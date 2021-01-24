@@ -1,11 +1,16 @@
 package controllers;
 
+import daos.Coffees;
+import daos.DaoFactory;
+import model.Coffee;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "controllers.CoffeeServlet", urlPatterns = "/coffee")
 public class CoffeeServlet extends HttpServlet {
@@ -16,7 +21,14 @@ public class CoffeeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String input = req.getParameter("choice");
-        req.setAttribute("coffee", input);
+        String type = req.getParameter("type");
+        double price = Double.parseDouble(req.getParameter("cost"));
+
+        Coffee custom = new Coffee(input, type, price);
+        List<Coffee> allCoffees = DaoFactory.getCoffeesDao().all();
+        allCoffees.add(custom);
+
+        req.setAttribute("coffeeList", allCoffees);
         req.getRequestDispatcher("/coffees.jsp").forward(req, resp);
     }
 }
