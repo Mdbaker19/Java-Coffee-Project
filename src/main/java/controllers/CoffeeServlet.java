@@ -16,7 +16,7 @@ import java.util.List;
 public class CoffeeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req, resp);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,9 +26,9 @@ public class CoffeeServlet extends HttpServlet {
 
         Coffee custom = new Coffee(input, type, price);
         List<Coffee> allCoffees = DaoFactory.getCoffeesDao().all();
-        allCoffees.add(custom);
+        DaoFactory.getCoffeesDao().insert(custom);
 
         req.setAttribute("coffeeList", allCoffees);
-        req.getRequestDispatcher("/coffees.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/coffees.jsp").forward(req, resp);
     }
 }

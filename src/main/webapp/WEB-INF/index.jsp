@@ -9,12 +9,12 @@
 <html>
 <head>
     <title>Add a coffee</title>
-    <style><%@ include file="CSS/inputStyle.css" %></style>
-    <style><%@ include file="CSS/globalStyle.css" %></style>
+    <style><%@ include file="../CSS/inputStyle.css" %></style>
+    <style><%@ include file="../CSS/globalStyle.css" %></style>
 </head>
 <body>
 
-    <%@ include file="partials/navBar.jsp" %>
+    <%@ include file="../partials/navBar.jsp" %>
 
 
     <form id="mainForm" action="/coffee" method="POST">

@@ -10,11 +10,11 @@
 <html>
 <head>
     <title>Coffee page</title>
-    <style><%@ include file="CSS/coffeeStyle.css" %></style>
-    <style><%@ include file="CSS/globalStyle.css" %></style>
+    <style><%@ include file="../CSS/coffeeStyle.css" %></style>
+    <style><%@ include file="../CSS/globalStyle.css" %></style>
 </head>
 <body>
-    <%@ include file="partials/navBar.jsp" %>
+    <%@ include file="../partials/navBar.jsp" %>
 
     <div id="coffeeArea">
         <c:forEach var="coffee" items="${coffeeList}">
@@ -29,6 +29,6 @@
 
     <button id="jsTest">Console Log Click</button>
 
-<script src="JS/test.js"></script>
+<script src="../JS/test.js"></script>
 </body>
 </html>
