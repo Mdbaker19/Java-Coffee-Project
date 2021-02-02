@@ -3,6 +3,6 @@
         <li>Home</li>
         <li>About</li>
         <li>Coffees</li>
-        <li>Sign Out</li>
+        <li>Sign In</li>
     </ul>
 </nav>

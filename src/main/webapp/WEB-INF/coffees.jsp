@@ -14,7 +14,7 @@
     <style><%@ include file="../CSS/globalStyle.css" %></style>
 </head>
 <body>
-    <%@ include file="../partials/navBar.jsp" %>
+    <%@ include file="/WEB-INF/partials/navBar.jsp" %>
 
     <div id="coffeeArea">
         <c:forEach var="coffee" items="${coffeeList}">

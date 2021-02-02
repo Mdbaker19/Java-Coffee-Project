@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <%@ include file="../partials/navBar.jsp" %>
+    <%@ include file="/WEB-INF/partials/navBar.jsp" %>
 
 
     <form id="mainForm" action="/coffee" method="POST">

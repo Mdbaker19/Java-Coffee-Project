@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -20,11 +21,12 @@ public class CoffeeServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
         String input = req.getParameter("choice");
         String type = req.getParameter("type");
         double price = Double.parseDouble(req.getParameter("cost"));
 
-        Coffee custom = new Coffee(input, type, price);
+        Coffee custom = new Coffee(1, input, type, price);
         List<Coffee> allCoffees = DaoFactory.getCoffeesDao().all();
         DaoFactory.getCoffeesDao().insert(custom);
 

@@ -4,14 +4,22 @@ public class Coffee {
     private double price;
     private String type;
     private String name;
+    private int user_id;
 
     public Coffee(){}
-    public Coffee(String name, String type, double price){
+    public Coffee(int user_id, String name, String type, double price){
+        this.user_id = user_id;
         this.name = name;
         this.type = type;
         this.price = price;
     }
 
+    public int getUser_id(){
+        return this.user_id;
+    }
+    public void setUser_id(int id){
+        this.user_id = id;
+    }
     public double getPrice() {
         return price;
     }
